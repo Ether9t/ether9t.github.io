@@ -1,1 +1,119 @@
-"Hello World"
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ether9t</title>
+    <style>
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: white;
+            padding: 1em 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        nav a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 1em;
+            font-weight: 500;
+        }
+
+        .container {
+            margin-top: 60px;
+            padding: 2em;
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 2em;
+            margin-bottom: 2em;
+            background-color: #f5f5f5;
+            padding: 2em;
+            border-radius: 10px;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .profile-text {
+            flex: 1;
+        }
+
+        .about-section {
+            margin-top: 2em;
+            background-color: #f5f5f5;
+            padding: 2em;
+            border-radius: 10px;
+        }
+
+        .profile-text h1 {
+            color: #333;
+            margin-bottom: 0.5em;
+        }
+
+        .profile-text p {
+            color: #666;
+            margin: 0.5em 0;
+        }
+
+        .cat-gallery {
+            display: flex;
+            gap: 1em;
+            margin-top: 1em;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .cat-image {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="https://github.com/ether9t" target="_blank">Projects</a>
+    </nav>
+
+    <div class="container">
+        <div class="profile-section" id="home">
+            <img src="D:\Study\ether9t\ether9t.github.io\images\photo.jpg" alt="Profile Photo" class="profile-image">
+            <div class="profile-text">
+                <h1>Ruizi Wang</h1>
+                <p>Robotics in UMN</p>
+                <p>📧 Email: <a href="mailto:wan01492@umn.edu">wan01492@umn.edu</a></p>
+            </div>
+        </div>
+
+        <div class="about-section" id="about">
+            <h2>About</h2>
+            <p>🙂Welcome to my homepage, feel free to check out my projects. I'm interested in <strong>HCI</strong> and <strong>HRI</strong>.</p>
+            
+            <p>💻If you're interested in <strong>volunteer translation</strong>, please check out <a href="https://www.bilibili.com/video/BV1W84y1N72X/?spm_id_from=333.999.0.0" target="_blank">my work</a>.</p>
+            
+            <p>💻If you're interested in <strong>psychology</strong> or <strong>Disco Elysium</strong>, please check out <a href="https://www.bilibili.com/video/BV1Kw4m1y7wc/?spm_id_from=333.880.my_history.page.click" target="_blank">our translation group's work</a>.</p>
+
+            <p>🐱If you're just passing by, feel free to check out my cats.</p>
+            <div class="cat-gallery">
+                <img src="images/Avogadro.png" alt="Avogadro" class="cat-image">
+                <img src="images/maybememe.png" alt="meme" class="cat-image">
+                <img src="images/Reinhardt.png" alt="Reinhardt" class="cat-image">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
