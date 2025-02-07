@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ether9t</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
         nav {
             position: fixed;
             top: 0;
@@ -31,9 +36,11 @@
             align-items: center;
             gap: 2em;
             margin-bottom: 2em;
-            background-color: #f5f5f5;
+            background-color: white;
             padding: 2em;
             border-radius: 10px;
+            border: 1px solid #f5f5f5;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         .profile-image {
@@ -49,9 +56,11 @@
 
         .about-section {
             margin-top: 2em;
-            background-color: #f5f5f5;
+            background-color: white;
             padding: 2em;
             border-radius: 10px;
+            border: 1px solid #f5f5f5;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
         .profile-text h1 {
@@ -80,6 +89,21 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             justify-content: center;
         }
+
+        .icon-pad-right {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .chinese-name {
+            color: #666;
+            margin-left: 10px;
+            font-size: 0.5em;
+            font-weight: 100;
+            vertical-align: middle;
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
@@ -93,9 +117,9 @@
         <div class="profile-section" id="home">
             <img src="images/photo.jpg" alt="Profile Photo" class="profile-image">
             <div class="profile-text">
-                <h1>Ruizi Wang</h1>
-                <p>Robotics in UMN</p>
-                <p>📧 Email: <a href="mailto:wan01492@umn.edu">wan01492@umn.edu</a></p>
+                <h1>Ruizi Wang<span class="chinese-name">汪睿子</span></h1>
+                <p><i class="fa fa-solid fa-building-columns icon-pad-right" aria-hidden="true"></i>Robotics in UMN</p>
+                <p><i class="fas fa-fw fa-envelope icon-pad-right" aria-hidden="true"></i>Email: <a href="mailto:wan01492@umn.edu">wan01492@umn.edu</a></p>
             </div>
         </div>
 
@@ -112,6 +136,11 @@
                 <img src="images/Avogadro.png" alt="Avogadro" class="cat-image">
                 <img src="images/maybememe.png" alt="meme" class="cat-image">
                 <img src="images/Reinhardt.png" alt="Reinhardt" class="cat-image">
+            </div>
+            <div class="cat-gallery" style="margin-top: 20px;">
+                <img src="images/black_cat_lay.jpg" alt="black cat lay" class="cat-image">
+                <img src="images/when.png" alt="just walking" class="cat-image">
+                <img src="images/my_love.jpg" alt="my love" class="cat-image">
             </div>
         </div>
     </div>
