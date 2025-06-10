@@ -14,6 +14,7 @@
         * {
             font-family: 'Poppins', sans-serif;
         }
+
         nav {
             position: fixed;
             top: 0; left: 0;
@@ -24,7 +25,6 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             z-index: 100;
         }
-        
         nav a {
             color: #333;
             text-decoration: none;
@@ -42,7 +42,7 @@
             top: 60px;
             bottom: 0;
             left: var(--page-gap);
-            width: 260px;
+            width: 230px;
             background-color: white;
             padding: 2em 1em;
             overflow-y: auto;
@@ -72,19 +72,28 @@
 
         .cat-gallery {
             display: flex;
-            gap: 1em;
-            margin-top: 1em;
+            justify-content: center;
+            gap: 20px;
             flex-wrap: wrap;
-            justify-content: center;
+            margin: 2rem auto;
+            max-width: 1000px;
         }
-
+        .cat-item {
+            width: calc(50% - 10px);
+            max-width: 400px;
+            text-align: center;
+        }
         .cat-image {
-            width: 300px;
-            height: 300px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
             object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            justify-content: center;
+            border: 3px solid #f0f0f0;
+        }
+        .cat-caption {
+            margin-top: 12px;
+            font-size: 0.95rem;
+            color: #555;
         }
 
         .icon-pad-right {
@@ -106,33 +115,91 @@
             margin-top: 60px;
             margin-left: calc(260px + var(--page-gap));
             margin-right: var(--page-gap);
-            padding: 2em;
+            padding: 1em 2em 0em 0em;
+        }
+
+        .underline-animate {
+            position: relative;
+            color: #137a7f;
+            text-decoration: none;
+            padding-bottom: 4px;
+            transition: color 0.3s;
+        }
+        .underline-animate::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 0;
+            height: 3px;
+            background: #86cecb;
+            transform: translateX(-50%);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+        }
+        .underline-animate:hover {
+            color: #000;
+        }
+        .underline-animate:hover::after {
+            width: 100%;
+            left: 0;
+            transform: none;
+        }
+
+        .content-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        a:link {
+            color: #137a7f;
+        }
+        a:visited {
+            color: #137a7f;
+        }
+        a:hover {
+            color: #86cecb;
+        }
+        a:active {
+            color: #86cecb;
+        }
+        a.underline-animate {
+            color: inherit;
         }
 
     </style>
 </head>
 <body>
     <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="https://github.com/ether9t" target="_blank">Projects</a>
+        <a href="#home" style="font-size: 24px; color: #2E2E2E;">Ruizi Wang</a>
+        <a href="https://github.com/ether9t" target="_blank" class="underline-animate">Projects</a>
     </nav>
 
     <div class="sidebar">
         <div class="" id="home">
             <img src="images/photo.jpg" alt="Profile Photo" class="profile-image">
             <div class="profile-text" style="text-align: left;">
-                <h3>
+                <h3 style="color: #444444;">
                     Ruizi Wang
                     <span class="chinese-name">汪睿子</span>
                 </h3>
                 <p>
                     <i class="fa fa-solid fa-building-columns icon-pad-right"></i>
-                    Robotics in UMN
+                    Robotics at UMN
                 </p>
                 <p>
                     <i class="fas fa-fw fa-envelope icon-pad-right"></i>
-                    <a href="mailto:wan01492@umn.edu" target="_blank">Email</a>
+                    <a 
+                        href="mailto:wan01492@umn.edu" 
+                        target="_blank" 
+                        style="color: #666; text-decoration: none;"
+                        onmouseover="this.style.textDecoration='underline'"
+                        onmouseout="this.style.textDecoration='none'"
+                    >
+                        Email
+                    </a>
                 </p>
             </div>
         </div>
@@ -140,25 +207,64 @@
 
     <div class="main-content">
         <div class="" id="about">
-            <h2>About</h2>
-            <p>🙂Welcome to my homepage, feel free to check out <a href="https://github.com/ether9t" target="_blank">my projects</a>. I'm interested in <strong>HCI</strong> and <strong>HRI</strong>.</p>
+            <h2 style="color: #444444;">About</h2>
+            <p class="content-text">😊Hi, I'm a master student in Robotics at <a href="https://cse.umn.edu/mnri" target="_blank">University of Minnesota, Twin Cities</a>. 
+                I'm a research assistant in the <a href="https://minnesotanlp.github.io/">Minnesota NLP group</a> 
+                and the <a href="https://qianwen.info/pages/lab_members/">Visual Intelligence Lab</a>, 
+                advised by Prof. <a href="https://dykang.github.io/">Dongyeop Kang</a> and Prof. <a href="https://qianwen.info/">Qianwen Wang</a>.</p>
             
-            <p>💻If you're interested in <strong>volunteer translation</strong>, please check out <a href="https://www.bilibili.com/video/BV1W84y1N72X/?spm_id_from=333.999.0.0" target="_blank">my work</a>(English to Chinese).</p>
-            
-            <p>💻If you're interested in <strong>psychology</strong> or <strong>Disco Elysium</strong>, please check out <a href="https://www.bilibili.com/video/BV1Kw4m1y7wc/?spm_id_from=333.880.my_history.page.click" target="_blank">our translation group's work</a>(English with Chinese).</p>
+            <p class="content-text">💻My current research interest is Human-Computer Interaction (HCI).</p>
 
-            <p>🐱If you're just passing by, feel free to check out my cats.</p>
+            <p class="content-text">🤔Specifically, I am interested in:</p>
+            <ul class="content-text">
+                <li>
+                    <strong>Human-AI Collaboration</strong>: 
+                    Investigating how humans and AI can synergize to augment capabilities—balancing human judgment with AI's scalability to unlock new possibilities.
+                </li>
+                <li>
+                    <strong>Understanding human behavior through Interaction</strong>: 
+                    Studying how people interact with technology to reveal fundamental aspects of human cognition, enabling the development of AI systems that better understand and respond to human needs.
+                </li>
+            </ul>
+        </div>
+        <div class="" id="service">
+            <h2 style="color: #444444;">Service</h2>
+            <p class="content-text">❤️I dedicate time to volunteer translation work outside academia, 
+                facilitating cross-cultural communication for non-profit initiatives.</p>
+            <p class="content-text">📃Our translation group is now working on a unique series - 
+                <a href="https://www.youtube.com/playlist?list=PLBmriQSLAuRJvLNLhRBNso054qvpsqv3t">Therapist Plays Disco Elysium</a>. 
+                Explore <a href="https://www.bilibili.com/video/BV1Kw4m1y7wc/?spm_id_from=333.880.my_history.page.click" target="_blank">our work</a>
+                 if you're interested in psychological interpretations of <a href="https://store.steampowered.com/app/632470/Disco_Elysium__The_Final_Cut/">Disco Elysium</a>, 
+                    a critically acclaimed game exploring trauma and human consciousness through surreal detective noir(English with Chinese).</p>
+            <p class="content-text">📄Here's <a href="https://www.bilibili.com/video/BV1W84y1N72X/?spm_id_from=333.999.0.0" target="_blank">my translation work</a>
+                 on video games(English to Chinese).</p>
+            <p class="content-text">📖I'm currently studying Japanese and have passed the JLPT N4 level!</p>
+        </div>
+        <div class="" id="cat">
+            <h2 style="color: #444444;">Supporters</h2>
+            <p class="content-text">🐱Special thanks to my furry babies for their tremendous support! My degree belongs to them too.</p>
             <div class="cat-gallery">
-                <img src="images/Avogadro.png" alt="Avogadro" class="cat-image">
-                <img src="images/maybememe.png" alt="meme" class="cat-image">
-                <img src="images/Reinhardt.png" alt="Reinhardt" class="cat-image">
-            </div>
-            <div class="cat-gallery" style="margin-top: 20px;">
-                <img src="images/black_cat_lay.jpg" alt="black cat lay" class="cat-image">
-                <img src="images/when.png" alt="just walking" class="cat-image">
-                <img src="images/my_love.jpg" alt="my love" class="cat-image">
+                <div class="cat-item">
+                    <img src="images/my_love.jpg" alt="my love" class="cat-image">
+                    <p>Avogadro<span class="chinese-name" style="position: relative; top: -1.5px;">阿伏</span></p>
+                    <p class="cat-caption">A graduate student at the National Cat University, majoring in Human-Cat Relationship Studies and Social Relations.</p>
+                </div>
+                <div class="cat-item">
+                    <img src="images/Reinhardt.png" alt="Reinhardt" class="cat-image">
+                    <p>Reinhardt<span class="chinese-name" style="position: relative; top: -1.5px;">胖胖</span></p>
+                    <p class="cat-caption">Currently attending National Cat First Junior High School. Unfortunately, can only demonstrate intelligence when snacks are involved.</p>
+                </div>
             </div>
         </div>
+        <div class="" id="life">
+            <h2 style="color: #444444;">Life</h2>
+            <p class="content-text">🎮I spend most of my other time playing video games. I've been waiting for the release of Silksong for <strong>4</strong> years.</p>
+            <p class="content-text">😰I'm in the extremely painful process of applying for PhD programs for Fall 2026. Whether I succeed or fail, I plan to share all the materials I've used. 
+                I hope everything goes well for both me and all of you in the future.</p>
+        </div>
+        <footer style="text-align: center; padding: 20px; font-size: 14px; color: #666;">
+            📧Last updated on June 10, 2025 - Feel free to contact me!!!
+        </footer>
     </div>
 </body>
 </html>
