@@ -14,36 +14,38 @@
 
         * {
             font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
         }
 
         nav {
             position: fixed;
             top: 0; left: 0;
             width: 100%;
-            height: 60px;
-            line-height: 60px;
+            height: 3.75rem;
+            line-height: 3.75rem;
             background-color: white;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 0.125rem 0.3125rem rgba(0,0,0,0.1);
             z-index: 100;
         }
+
         nav a {
             color: #333;
             text-decoration: none;
-            margin: 0 1em;
+            margin: 0 1rem;
             font-weight: 500;
         }
 
         .container {
-            margin-top: 60px;
+            margin-top: 3.75rem;
             padding: 2em;
         }
 
         .sidebar {
             position: fixed;
-            top: 60px;
+            top: 3.75rem;
             bottom: 0;
             left: var(--page-gap);
-            width: 230px;
+            width: 14rem;
             background-color: white;
             padding: 2em 1em;
             overflow-y: auto;
@@ -51,8 +53,8 @@
         }
 
         .profile-image {
-            width: 200px;
-            height: 200px;
+            width: 12.5rem;
+            height: 12.5rem;
             border-radius: 50%;
             object-fit: cover;
         }
@@ -74,31 +76,33 @@
         .cat-gallery {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 1.25rem;
             flex-wrap: wrap;
             margin: 2rem auto;
-            max-width: 1000px;
         }
+
         .cat-item {
-            width: calc(50% - 10px);
-            max-width: 400px;
+            width: calc(50% - 0.625rem);
+            max-width: 25rem;
             text-align: center;
         }
+
         .cat-image {
-            width: 200px;
-            height: 200px;
+            width: 12.5rem;
+            height: 12.5rem;
             border-radius: 50%;
             object-fit: cover;
         }
+
         .cat-caption {
-            margin-top: 12px;
+            margin-top: 0.75rem;
             font-size: 0.95rem;
             color: #555;
         }
 
         .icon-pad-right {
-            margin-right: 10px;
-            width: 20px;
+            margin-right: 0.625rem;
+            width: 1.25rem;
             text-align: center;
         }
 
@@ -106,39 +110,41 @@
             color: #666;
             font-size: 0.6em;
             font-weight: 300;
-            margin-left: 10px;
+            margin-left: 0.625rem;
             vertical-align: middle;
             display: inline-block;
         }
 
         .main-content {
-            margin-top: 60px;
-            margin-left: calc(260px + var(--page-gap));
-            margin-right: var(--page-gap);
-            padding: 1em 6em 0em 0em;
+            margin-top: 3.5rem;
+            margin-left: calc(15.5rem + var(--page-gap));
+            padding: 1em 8em 0 0;
         }
 
         .underline-animate {
             position: relative;
             color: #137a7f;
             text-decoration: none;
-            padding-bottom: 4px;
+            padding-bottom: 0.25rem;
             transition: color 0.3s;
         }
+
         .underline-animate::after {
             content: "";
             position: absolute;
             left: 50%;
             bottom: 0;
             width: 0;
-            height: 3px;
+            height: 0.1875em;
             background: #86cecb;
             transform: translateX(-50%);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
         }
+
         .underline-animate:hover {
             color: #000;
         }
+
         .underline-animate:hover::after {
             width: 100%;
             left: 0;
@@ -149,9 +155,70 @@
             font-size: 1.1rem;
             line-height: 1.8;
             color: #444;
-            margin-bottom: 20px;
+            margin-bottom: 1.25rem;
+            letter-spacing: 0.007em;
             text-align: justify;
         }
+
+        @media (max-width: 768px) {
+            body {
+                text-align: center;
+            }
+
+            .sidebar {
+                position: relative;
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .main-content {
+                padding: 1.5rem;
+                margin: 0 auto;
+                margin-top: 1rem;
+            }
+
+            .container {
+                margin: 0 auto;
+                padding: 2em 1em;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .content-text {
+                font-size: 1rem;
+                line-height: 1.6;
+                text-align: left;
+            }
+
+            .cat-item {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav {
+                padding: 0 0.5rem;
+            }
+
+            .profile-image {
+                width: 8rem;
+                height: 8rem;
+            }
+
+            footer {
+                font-size: 0.75em;
+                color: #666;
+                text-align: center;
+            }
+        }
+
 
         a:link {
             color: #137a7f;
@@ -169,11 +236,17 @@
             color: inherit;
         }
 
+        footer {
+            padding: 1.25em;
+            font-size: 0.875em;
+            color: #666;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
     <nav>
-        <a href="#home" style="font-size: 24px; color: #2E2E2E;">Ruizi Wang</a>
+        <a href="#home" style="font-size: 1.5em; color: #2E2E2E; margin-left: 1em;">Ruizi Wang</a>
         <a href="https://github.com/ether9t" target="_blank" class="underline-animate">Projects</a>
     </nav>
 
@@ -237,7 +310,7 @@
                  if you're interested in psychological interpretations of <a href="https://store.steampowered.com/app/632470/Disco_Elysium__The_Final_Cut/">Disco Elysium</a>, 
                     a critically acclaimed game exploring trauma and human consciousness through surreal detective noir(English with Chinese).</p>
             <p class="content-text">📄Here's <a href="https://www.bilibili.com/video/BV1W84y1N72X/?spm_id_from=333.999.0.0" target="_blank">my translation work</a>
-                 on video games(English to Chinese).</p>
+                 about video games(English to Chinese).</p>
             <p class="content-text">📖I'm currently studying Japanese and have passed the JLPT N4 level!</p>
         </div>
         <div class="" id="life">
@@ -253,18 +326,18 @@
             <div class="cat-gallery">
                 <div class="cat-item">
                     <img src="images/my_love.jpg" alt="my love" class="cat-image">
-                    <p>Avogadro<span class="chinese-name" style="position: relative; top: -1.5px;">阿伏</span></p>
+                    <p>Avogadro<span class="chinese-name" style="position: relative; top: -0.095em;">阿伏</span></p>
                     <p class="cat-caption">A graduate student at the National Cat University, majoring in Human-Cat Relationship Studies and Social Relations.</p>
                 </div>
                 <div class="cat-item">
                     <img src="images/Reinhardt.png" alt="Reinhardt" class="cat-image">
-                    <p>Reinhardt<span class="chinese-name" style="position: relative; top: -1.5px;">胖胖</span></p>
+                    <p>Reinhardt<span class="chinese-name" style="position: relative; top: -0.19375em;">胖胖</span></p>
                     <p class="cat-caption">Actually never went to school. Unfortunately, can only demonstrate intelligence when snacks are involved.</p>
                 </div>
             </div>
         </div>
-        <footer style="text-align: center; padding: 20px; font-size: 14px; color: #666;">
-            📧Last updated on June 18, 2025 - Feel free to contact me!!!
+        <footer>
+            📧Last updated on June 20, 2025 - Feel free to contact me!!!
         </footer>
     </div>
 </body>
