@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>😽</title>
+    <link rel="icon" href="images/False_PHD.png" type="image/png" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+        }
+
+        .cat-gallery {
+            margin: 0 auto;
+            margin-top: 4.5rem;
+            box-sizing: border-box;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.6s ease;
+        }
+
+        .cat-gallery.is-visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .grid-sizer {
+            width: calc((100% / 3) - 10px);
+        }
+
+        .gallery-item {
+            width: calc((100% / 3) - 10px);
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        @media (max-width: 768px) {
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            nav {
+                position: relative;
+                box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 3.75rem;
+                line-height: 3.75rem;
+                background-color: white;
+                margin: 0 auto;
+                padding: 0;
+            }
+
+            @keyframes fadeInAnim {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
+
+            nav a.underline-animate {
+                display: none;
+            }
+
+            nav a {
+                color: #333;
+                text-decoration: none;
+                margin: 0 1rem;
+                font-weight: 500;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html" style="font-size: 1.5em; color: #2E2E2E; margin-left: 1em;">Ruizi Wang</a>
+        <a href="https://github.com/ether9t" target="_blank" class="underline-animate">Projects</a>
+    </nav>
+    <div class="cat-gallery">
+        <div class="grid-sizer"></div>
+        <div class="gallery-item"><img src="images/Avogadro.png" alt="Black cat" /></div>
+        <div class="gallery-item"><img src="images/black_cat_lay.jpg" alt="Black cat laying" /></div>
+        <div class="gallery-item"><img src="images/just_walking.png" alt="Black and orange cats walking" /></div>
+        <div class="gallery-item"><img src="images/maybememe.png" alt="meme" /></div>
+        <div class="gallery-item"><img src="images/when.png" alt="They are small!" /></div>
+        <div class="gallery-item"><img src="images/black_cat_w-flower.jpg" alt="Black cat with flower" /></div>
+        <div class="gallery-item"><img src="images/friend_pic.jpg" alt="Friend draw this!" /></div>
+        <div class="gallery-item"><img src="images/fighting.jpg" alt="fighting" /></div>
+        <div class="gallery-item"><img src="images/orange_cat_lay.jpg" alt="Orange cat laying" /></div>
+        <div class="gallery-item"><img src="images/orange_cat_w-flower.jpg" alt="Orange cat with flower" /></div>
+        <div class="gallery-item"><img src="images/watching.png" alt="Orange cat watching" /></div>
+        <div class="gallery-item"><img src="images/black_hole.jpg" alt="Black hole cat" /></div>
+    </div>
+
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script>
+        var grid = document.querySelector('.cat-gallery');
+        imagesLoaded(grid, function () {
+            new Masonry(grid, {
+                itemSelector: '.gallery-item',
+                percentPosition: true,
+                gutter: 15,
+                columnWidth: '.grid-sizer',
+            });
+            grid.classList.add('is-visible');
+        });
+    </script>
+</body>
+
+</html>

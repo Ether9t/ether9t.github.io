@@ -7,32 +7,10 @@
     <link rel="icon" href="images\False_PHD.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css" />
     <style>
         :root {
             --page-gap: 2em;
-        }
-
-        * {
-            font-family: 'Poppins', sans-serif;
-            box-sizing: border-box;
-        }
-
-        nav {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%;
-            height: 3.75rem;
-            line-height: 3.75rem;
-            background-color: white;
-            box-shadow: 0 0.125rem 0.3125rem rgba(0,0,0,0.1);
-            z-index: 100;
-        }
-
-        nav a {
-            color: #333;
-            text-decoration: none;
-            margin: 0 1rem;
-            font-weight: 500;
         }
 
         .container {
@@ -50,6 +28,8 @@
             padding: 2em 1em;
             overflow-y: auto;
             z-index: 50;
+            opacity: 0;
+            animation: fadeInAnim 0.5s ease forwards;
         }
 
         .profile-image {
@@ -119,36 +99,8 @@
             margin-top: 3.5rem;
             margin-left: calc(15.5rem + var(--page-gap));
             padding: 1em 8em 0 0;
-        }
-
-        .underline-animate {
-            position: relative;
-            color: #137a7f;
-            text-decoration: none;
-            padding-bottom: 0.25rem;
-            transition: color 0.3s;
-        }
-
-        .underline-animate::after {
-            content: "";
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            width: 0;
-            height: 0.1875em;
-            background: #86cecb;
-            transform: translateX(-50%);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
-        }
-
-        .underline-animate:hover {
-            color: #000;
-        }
-
-        .underline-animate:hover::after {
-            width: 100%;
-            left: 0;
-            transform: none;
+            opacity: 0;
+            animation: fadeInAnim 0.5s ease forwards;
         }
 
         .content-text {
@@ -161,18 +113,45 @@
         }
 
         @media (max-width: 768px) {
+            html,
             body {
-                text-align: center;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
             }
 
             .sidebar {
                 position: relative;
-                width: 100%;
+                left: auto;
+                right: auto;
+                margin: 1rem auto;
+                padding: 1.5rem;
+                overflow: visible;
+                z-index: auto;
+                text-align: center;
+            }
+
+            .profile-text>* {
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+
+            .profile-text p {
                 display: flex;
-                flex-wrap: wrap;
                 justify-content: center;
-                gap: 1rem;
-                padding: 1rem;
+                align-items: center;
+            }
+
+            .chinese-name {
+                display: block;
+                margin: 0.25rem auto 0 auto;
+                text-align: center;
+            }
+
+            .profile-text h3 {
+                margin-top: 0.3rem;
+                text-align: center;
             }
 
             .main-content {
@@ -192,7 +171,6 @@
 
             .content-text {
                 font-size: 1rem;
-                line-height: 1.6;
                 text-align: left;
             }
 
@@ -204,10 +182,25 @@
             }
 
             nav {
-                padding: 0 0.5rem;
+                position: relative;
+                box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 3.75rem;
+                line-height: 3.75rem;
+                background-color: white;
+                margin: 0 auto;
+                padding: 0;
+            }
+
+            nav a.underline-animate {
+                display: none;
             }
 
             .profile-image {
+                margin-top: -4.5rem;
                 width: 8rem;
                 height: 8rem;
             }
@@ -218,35 +211,12 @@
                 text-align: center;
             }
         }
-
-
-        a:link {
-            color: #137a7f;
-        }
-        a:visited {
-            color: #137a7f;
-        }
-        a:hover {
-            color: #86cecb;
-        }
-        a:active {
-            color: #86cecb;
-        }
-        a.underline-animate {
-            color: inherit;
-        }
-
-        footer {
-            padding: 1.25em;
-            font-size: 0.875em;
-            color: #666;
-            text-align: center;
-        }
     </style>
 </head>
+
 <body>
     <nav>
-        <a href="#home" style="font-size: 1.5em; color: #2E2E2E; margin-left: 1em;">Ruizi Wang</a>
+        <a href="index.html" style="font-size: 1.5em; color: #2E2E2E; margin-left: 1em;">Ruizi Wang</a>
         <a href="https://github.com/ether9t" target="_blank" class="underline-animate">Projects</a>
     </nav>
 
@@ -264,13 +234,9 @@
                 </p>
                 <p>
                     <i class="fas fa-fw fa-envelope icon-pad-right"></i>
-                    <a 
-                        href="mailto:wan01492@umn.edu" 
-                        target="_blank" 
-                        style="color: #666; text-decoration: none;"
+                    <a href="mailto:wan01492@umn.edu" target="_blank" style="color: #666; text-decoration: none;"
                         onmouseover="this.style.textDecoration='underline'"
-                        onmouseout="this.style.textDecoration='none'"
-                    >
+                        onmouseout="this.style.textDecoration='none'">
                         Email
                     </a>
                 </p>
@@ -281,64 +247,83 @@
     <div class="main-content">
         <div class="" id="about">
             <h2 style="color: #444444;">About</h2>
-            <p class="content-text">😊Hi, I'm a master student in Robotics at <a href="https://cse.umn.edu/mnri" target="_blank">University of Minnesota, Twin Cities</a>. 
-                I'm a research assistant in the <a href="https://minnesotanlp.github.io/">Minnesota NLP group</a> 
-                and the <a href="https://qianwen.info/pages/lab_members/">Visual Intelligence Lab</a>, 
-                advised by Prof. <a href="https://dykang.github.io/">Dongyeop Kang</a> and Prof. <a href="https://qianwen.info/">Qianwen Wang</a>.</p>
-            
+            <p class="content-text">😊Hi, I'm a master student in Robotics at <a href="https://cse.umn.edu/mnri"
+                    target="_blank">University of Minnesota, Twin Cities</a>.
+                I'm a research assistant in the <a href="https://minnesotanlp.github.io/">Minnesota NLP group</a>
+                and the <a href="https://qianwen.info/pages/lab_members/">Visual Intelligence Lab</a>,
+                advised by Prof. <a href="https://dykang.github.io/">Dongyeop Kang</a> and Prof. <a
+                    href="https://qianwen.info/">Qianwen Wang</a>.</p>
+
             <p class="content-text">💻My current research interest is Human-Computer Interaction (HCI).</p>
 
             <p class="content-text">🤔Specifically, I am interested in:</p>
             <ul class="content-text">
                 <li>
-                    <strong>Human-AI Collaboration</strong>: 
-                    Investigating how humans and AI can synergize to augment capabilities—balancing human judgment with AI's scalability to unlock new possibilities.
+                    <strong>Human-AI Collaboration</strong>:
+                    Investigating how humans and AI can synergize to augment capabilities—balancing human judgment with
+                    AI's scalability to unlock new possibilities.
                 </li>
                 <li>
-                    <strong>Understanding human behavior through Interaction</strong>: 
-                    Studying how people interact with technology to reveal fundamental aspects of human cognition, enabling the development of AI systems that better understand and respond to human needs.
+                    <strong>Understanding human behavior through Interaction</strong>:
+                    Studying how people interact with technology to reveal fundamental aspects of human cognition,
+                    enabling the development of AI systems that better understand and respond to human needs.
                 </li>
             </ul>
         </div>
         <div class="" id="service">
             <h2 style="color: #444444;">Service</h2>
-            <p class="content-text">❤️I dedicate time to volunteer translation work outside academia, 
+            <p class="content-text">❤️I dedicate time to volunteer translation work outside academia,
                 facilitating cross-cultural communication for non-profit initiatives.</p>
-            <p class="content-text">📃Our translation group is now working on a unique series - 
-                <a href="https://www.youtube.com/playlist?list=PLBmriQSLAuRJvLNLhRBNso054qvpsqv3t">Therapist Plays Disco Elysium</a>. 
-                Explore <a href="https://www.bilibili.com/video/BV1Kw4m1y7wc/?spm_id_from=333.880.my_history.page.click" target="_blank">our work</a>
-                 if you're interested in psychological interpretations of <a href="https://store.steampowered.com/app/632470/Disco_Elysium__The_Final_Cut/">Disco Elysium</a>, 
-                    a critically acclaimed game exploring trauma and human consciousness through surreal detective noir(English with Chinese).</p>
-            <p class="content-text">📄Here's <a href="https://www.bilibili.com/video/BV1W84y1N72X/?spm_id_from=333.999.0.0" target="_blank">my translation work</a>
-                 about video games(English to Chinese).</p>
+            <p class="content-text">📃Our translation group is now working on a unique series -
+                <a href="https://www.youtube.com/playlist?list=PLBmriQSLAuRJvLNLhRBNso054qvpsqv3t">Therapist Plays Disco
+                    Elysium</a>.
+                Explore <a href="https://www.bilibili.com/video/BV1Kw4m1y7wc/?spm_id_from=333.880.my_history.page.click"
+                    target="_blank">our work</a>
+                if you're interested in psychological interpretations of <a
+                    href="https://store.steampowered.com/app/632470/Disco_Elysium__The_Final_Cut/">Disco Elysium</a>,
+                a critically acclaimed game exploring trauma and human consciousness through surreal detective
+                noir(English with Chinese).
+            </p>
+            <p class="content-text">📄Here's <a
+                    href="https://www.bilibili.com/video/BV1W84y1N72X/?spm_id_from=333.999.0.0" target="_blank">my
+                    translation work</a>
+                about video games(English to Chinese).</p>
             <p class="content-text">📖I'm currently studying Japanese and have passed the JLPT N4 level!</p>
         </div>
         <div class="" id="life">
             <h2 style="color: #444444;">Life</h2>
-            <p class="content-text">🎮I spend most of my other time playing video games. I've been waiting for the release of Silksong for <strong>4</strong> years.</p>
-            <p class="content-text">😰I'm in the extremely painful process of applying for PhD programs for Fall 2026. Whether I succeed or fail, I plan to share all the materials I've used. 
+            <p class="content-text">🎮I spend most of my other time playing video games. I've been waiting for the
+                release of Silksong for <strong>4</strong> years.</p>
+            <p class="content-text">😰I'm in the extremely painful process of applying for PhD programs for Fall 2026.
+                Whether I succeed or fail, I plan to share all the materials I've used.
                 I hope everything goes well for both me and all of you in the future.</p>
-            <p class="content-text">💊The website's icon is False PHD from The Binding of Isaac, want to change it to PHD if possible...</p>
+            <p class="content-text">💊The website's icon is False PHD from The Binding of Isaac, want to change it to
+                PHD if possible...</p>
         </div>
         <div class="" id="cat">
             <h2 style="color: #444444;">Supporters</h2>
-            <p class="content-text">🐱Special thanks to my furry babies for their tremendous support! My degree belongs to them too.</p>
+            <p class="content-text">🐱Special thanks to my furry babies for their tremendous support! My degree belongs
+                to them too.</p>
+            <p class="content-text">😸You can check more cats <a href="cat.html">here</a>!</p>
             <div class="cat-gallery">
                 <div class="cat-item">
                     <img src="images/my_love.jpg" alt="my love" class="cat-image">
                     <p>Avogadro<span class="chinese-name" style="position: relative; top: -0.095em;">阿伏</span></p>
-                    <p class="cat-caption">A graduate student at the National Cat University, majoring in Human-Cat Relationship Studies and Social Relations.</p>
+                    <p class="cat-caption">A graduate student at the National Cat University, majoring in Human-Cat
+                        Relationship Studies and Social Relations.</p>
                 </div>
                 <div class="cat-item">
                     <img src="images/Reinhardt.png" alt="Reinhardt" class="cat-image">
                     <p>Reinhardt<span class="chinese-name" style="position: relative; top: -0.19375em;">胖胖</span></p>
-                    <p class="cat-caption">Actually never went to school. Unfortunately, can only demonstrate intelligence when snacks are involved.</p>
+                    <p class="cat-caption">Actually never went to school. Unfortunately, can only demonstrate
+                        intelligence when snacks are involved.</p>
                 </div>
             </div>
         </div>
         <footer>
-            📧Last updated on June 23, 2025 - Feel free to contact me!!!
+            📧Last updated on July 1, 2025 - Feel free to contact me!!!
         </footer>
     </div>
 </body>
+
 </html>
