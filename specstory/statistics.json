@@ -7,16 +7,16 @@
       "end_timestamp": "2026-05-14T23:47:37.705Z",
       "markdown_size_bytes": 551,
       "provider": "claude-code",
-      "last_updated": "2026-05-15T00:17:06Z"
+      "last_updated": "2026-05-21T14:35:19Z"
     },
     "e17b0bf0-4311-4a8b-a53a-3f8d6726cc6c": {
       "user_message_count": 5,
       "agent_message_count": 16,
       "start_timestamp": "2026-05-15T00:23:43.669Z",
       "end_timestamp": "2026-05-15T02:38:19.879Z",
-      "markdown_size_bytes": 37758,
+      "markdown_size_bytes": 37662,
       "provider": "claude-code",
-      "last_updated": "2026-05-15T02:38:20Z"
+      "last_updated": "2026-05-21T14:35:19Z"
     }
   }
 }
